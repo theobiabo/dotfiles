@@ -1,0 +1,21 @@
+//
+//  {filename}.swift
+//
+//  Created by Ayodeji O. on {date}.
+//
+
+import SwiftUI
+
+struct {filename}: View {
+    var body: some View {
+        VStack {
+            Text("Hello, world!")
+			{cursor}
+        }
+        .padding()
+    }
+}
+
+#Preview {
+    {filename}()
+}

@@ -1,0 +1,19 @@
+//
+//  {filename}.swift
+//
+//  Created by Ayodeji O. on {date}.
+//
+
+import Foundation
+
+protocol {filename}Protocol: ObservableObject {
+    var someProperty: String { get }
+}
+
+final class {filename}: {filename}Protocol {
+    @Published var someProperty: String = ""
+
+    init() {
+        {cursor}
+    }
+}
