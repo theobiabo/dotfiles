@@ -1,37 +1,15 @@
 # macOS dotfiles
 
-The [Brewfile](Brewfile) installs my apps, command-line tools, and editor extensions. Chezmoi restores my shell, terminal, and editor settings.
-
 ## Set up a new Mac
 
-1. **Install Homebrew.** Open Terminal on the new Mac and run the [official installer](https://brew.sh/).
+Paste this line into Terminal on the new Mac:
 
-   ```sh
-   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-   ```
+```sh
+mac_setup=$(curl -fsSL https://raw.githubusercontent.com/theobiabo/dotfiles/main/setup.sh) && /bin/bash -c "$mac_setup"
+```
 
-   Follow the installer’s **Next steps** to put `brew` on your PATH. Run `brew --version` in the same terminal before continuing.
+The [setup script](setup.sh) installs Homebrew and chezmoi, installs the apps, tools, and extensions in the [Brewfile](Brewfile), and sets up Oh My Zsh. It then applies the dotfiles to your account and checks the installed packages.
 
-2. **Install the software.** Initialize chezmoi from GitHub, then run Homebrew Bundle against the Brewfile in that checkout.
+Run it as your normal user. macOS may ask for your administrator password or prompt you to install the Command Line Tools. When you see `Setup complete`, open a new Terminal window to load your shell settings.
 
-   ```sh
-   brew install chezmoi
-   chezmoi init --depth=1 https://github.com/theobiabo/dotfiles.git
-   brew bundle install --file="$(chezmoi source-path)/Brewfile"
-   ```
-
-3. **Restore the settings.** The saved Zsh configuration loads Oh My Zsh. Install it if needed, then preview the dotfiles.
-
-   ```sh
-   test -f "$HOME/.oh-my-zsh/oh-my-zsh.sh" || git clone --depth 1 https://github.com/ohmyzsh/ohmyzsh.git "$HOME/.oh-my-zsh"
-   chezmoi diff
-   ```
-
-   These settings use `/opt/homebrew` and some paths under `/Users/obiabo`. On an Intel Mac or a Mac with a different account name, adjust those paths in the chezmoi checkout before applying. Once the preview looks right, apply the settings and check the installed packages.
-
-   ```sh
-   chezmoi apply
-   brew bundle check --no-upgrade --file="$(chezmoi source-path)/Brewfile"
-   ```
-
-Open a new Terminal window to load the shell settings. Sign in to your apps and transfer project files separately.
+If an install is interrupted, run the same command again. Sign in to your apps and transfer your project files separately.

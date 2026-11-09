@@ -1,5 +1,6 @@
 Brewfile
 README.md
+setup.sh
 
 .ssh
 .aws

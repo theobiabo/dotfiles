@@ -1,0 +1,7 @@
+{{- if lookPath "brew" -}}
+{{ output "brew" "--prefix" | trim }}
+{{- else if eq .chezmoi.arch "arm64" -}}
+/opt/homebrew
+{{- else -}}
+/usr/local
+{{- end -}}

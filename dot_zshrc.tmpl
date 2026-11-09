@@ -124,9 +124,9 @@ export NVM_DIR="$HOME/.nvm"
 source "$HOME/.railway/env"
 # <<< railway initialize <<<
 
-# Turborepo standalone installer PATH: /Users/obiabo/.local/bin
+# Turborepo standalone installer PATH: {{ .chezmoi.homeDir }}/.local/bin
 case ":$PATH:" in
-  *:'/Users/obiabo/.local/bin':*) ;;
-  *) PATH='/Users/obiabo/.local/bin':"$PATH" ;;
+  *:'{{ .chezmoi.homeDir }}/.local/bin':*) ;;
+  *) PATH='{{ .chezmoi.homeDir }}/.local/bin':"$PATH" ;;
 esac
 export PATH

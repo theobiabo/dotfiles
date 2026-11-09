@@ -60,7 +60,7 @@ local config = {
 		},
 		["v_analyzer"] = {},
 		["sqls"] = {
-			cmd = { "sqls", "--config", "/Users/ayodeji/.config/sqls/config.yml" },
+			cmd = { "sqls", "--config", vim.fn.expand("~/.config/sqls/config.yml") },
 		},
 		["gleam"] = {},
 		["sourcekit"] = {
