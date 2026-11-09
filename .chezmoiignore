@@ -1,3 +1,7 @@
+# These files are used directly from the Git checkout.
+Brewfile
+README.md
+
 # Credentials, account state, and local history
 .ssh
 .aws
