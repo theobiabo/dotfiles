@@ -1,2 +1,18 @@
-# Local Chezmoi files that may contain credentials or device-specific data.
 **/private_*
+dot_config/solana/
+dot_config/gh/
+dot_config/github-copilot/
+dot_config/flutter/tool_state
+dot_config/raycast/extensions/
+dot_git/
+dot_ssh/
+dot_aws/
+dot_gnupg/
+dot_env
+dot_env.*
+dot_codex/auth.json
+dot_docker/config.json
+*.pem
+*.key
+*.p12
+*.pfx

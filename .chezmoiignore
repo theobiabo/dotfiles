@@ -1,8 +1,6 @@
-# These files are used directly from the Git checkout.
 Brewfile
 README.md
 
-# Credentials, account state, and local history
 .ssh
 .aws
 .gnupg
@@ -27,10 +25,13 @@ README.md
 .codex/memories*
 .railway/config.json
 
-# Generated trees and old backups retained in the repository
 **/.git
 **/node_modules
 .config/nvim.bak
 .config/raycast
 .config/flutter/tool_state
 .config/simple-update-notifier
+**/*.pem
+**/*.key
+**/*.p12
+**/*.pfx
