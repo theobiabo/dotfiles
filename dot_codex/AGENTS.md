@@ -1,0 +1,8 @@
+# Global skill policy
+
+- Treat the session's **Available skills** catalog as the authoritative index of usable skills, regardless of where each skill is stored.
+- When the user names a skill, or a task clearly matches a skill's description, read that skill's complete `SKILL.md` before acting and follow it for that turn.
+- Store personal, user-created skills at `/Users/obiabo/.codex/skills/<skill-name>/SKILL.md`.
+- Also use installed skills exposed through the Available skills catalog. Plugin-managed skills may live under `/Users/obiabo/.codex/plugins/cache`; do not copy, move, or edit those cached installations merely to make them discoverable.
+- Do not load every skill for every task. Select all and only the skills relevant to the current request, and follow the normal skill precedence rules when instructions conflict.
+- If the user expects an installed skill but it is absent from the Available skills catalog, say that it is unavailable in the current session instead of silently ignoring it.

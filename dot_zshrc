@@ -1,39 +1,14 @@
-export PATH="$PATH:/Users/obiabo/Applications/JetBrains"
-
-
-# Android SDK paths
-export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
-export ANDROID_HOME="$ANDROID_SDK_ROOT"
-export PATH="$PATH:$ANDROID_HOME/emulator"
-export PATH="$PATH:$ANDROID_HOME/platform-tools"
-export PATH="$PATH:$ANDROID_HOME/cmdline-tools/latest/bin"
-
-
-export ANDROID_SDK_ROOT="$HOME/Library/Android/sdk"
-export PATH="$ANDROID_SDK_ROOT/emulator:$ANDROID_SDK_ROOT/platform-tools:$ANDROID_SDK_ROOT/cmdline-tools/latest/bin:$PATH"
-
-export PATH="$PATH:$HOME/develop/flutter/bin"
-export STARSHIP_CONFIG="$HOME/.config/starship.toml"
-#start starship init zsh
-eval "$(starship init zsh)"
-
-export PATH=$PATH:$(go env GOPATH)/bin
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
-export PATH=$PATH:$(go env GOPATH)/bin
+
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
-
-
-#Alias for my shadcn
-alias shadcn="pnpm dlx shadcn@latest"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME=""
+ZSH_THEME="robbyrussell"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -127,204 +102,31 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-export PATH="$HOME/.cargo/bin:$PATH"
+alias split="wezterm cli split-pane"
+alias  start-rust="cargo run watch -x"
+alias "rs start"="cargo run watch -x"
 
 
-# bun completions
-[ -s "/Users/obiabo/.bun/_bun" ] && source "/Users/obiabo/.bun/_bun"
 
-# bun
-export BUN_INSTALL="$HOME/.bun"
-export PATH="$BUN_INSTALL/bin:$PATH"
-export PATH="$HOME/develop/flutter/bin:$PATH"
+#Paths
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-17.jdk/Contents/Home
 
-
-# pnpm
-export PNPM_HOME="/Users/obiabo/Library/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
 
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-
-PATH=~/.console-ninja/.bin:$PATHexport PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH
-export PATH="$HOME/.bun/bin:$HOME/.npm-global/bin:$HOME/.yarn/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$PATH"
-export PATH="$HOME/.bun/bin:$HOME/.npm-global/bin:$HOME/.yarn/bin:/opt/homebrew/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin"
-export PATH="/opt/homebrew/opt/postgresql@17/bin:$PATH"
-export PATH="/opt/homebrew/bin:$PATH"
-export PATH="/Applications/Postgres.app/Contents/Versions/latest/bin:$PATH"
-alias lzd='lazydocker'
-alias lzd='lazydocker'
-export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
-export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
-export PATH="$HOME/.local/share/solana/install/active_release/bin:$PATH"
-export PATH="$HOME/.cargo/bin:$PATH"
-
-export PATH="/opt/webstorm/bin:$PATH"
-alias webstorm="/opt/webstorm/bin/webstorm.sh"
-
-export PATH="$HOME/develop/flutter/bin:$PATH"
 
 
-#My aliases
-alias p='/opt/homebrew/bin/pnpm'
-alias lz='eza --icons'
-alias list='eza'
-alias source='source ~/.zshrc'
-alias write='nano ~/.zshrc'
-alias vw='nvim ~/.zshrc'
-alias killaudio='sudo killall coreaudiod'
-alias bunshad='bunx --bun shadcn@latest add'
-alias desktop='cd ~/Desktop'
-alias gigs='cd ~/Desktop/gigs'
-alias work='cd ~/Desktop/work'
-alias startup='cd ~/Desktop/startup'
+# >>> railway initialize >>>
+source "$HOME/.railway/env"
+# <<< railway initialize <<<
 
-export PATH="$HOME/bin:$PATH"
-
-
-alias webstorm="/opt/webstorm/bin/webstorm"
-
-#ALIASES FOR IOS
-alias boot-ios='xcrun simctl boot 5CBA5212-4B73-439D-A365-AE5F09AAA197'
-
-# Added by Antigravity
-export PATH="/Users/obiabo/.antigravity/antigravity/bin:$PATH"
-
-# Navigation
-alias ..='cd ..'
-alias ...='cd ../..'
-alias ~='cd ~'
-alias -- -='cd -'               # Jump back to previous directory
-alias mkcd='f(){ mkdir -p "$1" && cd "$1"; }; f'  # create and cd
-
-# Listing (uses eza if available, falls back to ls)
-unalias lz 2>/dev/null
-alias ls='eza --icons'
-alias list='eza'
-
-alias ll='eza -la --group-directories-first --icons'
-alias la='eza -a --icons'
-alias lg='eza -lh --git --icons'
-alias lt='eza -T --git --icons'
-alias l='eza --icons'
-alias lst='eza -la --sort=modified --icons'
-
-# Git
-alias gs='git status -sb'
-alias ga='git add'
-alias gap='git add -p'
-alias gc='git commit'
-alias gcm='git commit -m'
-alias gca='git commit --amend --no-edit'
-alias gco='git checkout'
-alias gcb='git checkout -b'
-alias gb='git branch'
-alias gbd='git branch -d'
-alias gB='git branch -a'
-alias gl='git log --oneline --graph --decorate --all'
-alias gpf='git push --force-with-lease'
-alias gp='git push'
-alias gpl='git pull --rebase'
-alias gcl='git clone'
-alias gdiff='git diff'
-alias gstash='git stash'
-alias gstashp='git stash -p'
-alias gpop='git stash pop'
-alias gt='git tag'
-alias gr='git remote -v'
-
-# Git cleanup helpers
-alias gclean-merged='git branch --merged | egrep -v "(^\*|main|master)" | xargs -n 1 git branch -d'
-alias gprune='git fetch -p'
-
-# Docker
-alias d='docker'
-alias dc='docker compose'
-alias dps='docker ps'
-alias dim='docker images'
-alias drm='docker rm'
-alias drmi='docker rmi'
-alias dstop-all='docker stop $(docker ps -q)'
-alias drm-stopped='docker rm $(docker ps -aq -f status=exited)'
-alias dlogs='docker logs -f'
-alias ddown='docker compose down'
-alias dup='docker compose up -d'
-alias drestart='docker compose restart'
-
-# Node / PNPM / Bun helpers
-alias pn='pnpm'
-alias pni='pnpm install'
-alias pnr='pnpm run'
-alias pnb='pnpm build'
-alias pnd='pnpm dev'
-alias pnt='pnpm test'
-alias pnx='pnpm exec'
-alias nb='bun'
-alias nbi='bun install'
-alias nbd='bun run dev'
-alias nbb='bun run build'
-alias nx='npx'    # sometimes handy alongside bunx
-
-# Process and network
-alias ports='sudo lsof -i -P -n | egrep "(LISTEN|ESTABLISHED)"'
-alias killport='f(){ lsof -ti tcp:$1 | xargs kill -9; }; f'
-alias topmem='ps aux | sort -rk 4,4 | head'
-alias topcpu='ps aux | sort -rk 3,3 | head'
-alias iplocal='ipconfig getifaddr en0 || ipconfig getifaddr en1'
-
-# System / macOS specifics
-alias flushdns='sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder'
-alias showhidden='defaults write com.apple.finder AppleShowAllFiles YES && killall Finder'
-alias hidehidden='defaults write com.apple.finder AppleShowAllFiles NO && killall Finder'
-alias cleanup-ds='find . -name ".DS_Store" -type f -delete'
-alias path='echo $PATH | tr ":" "\n"'
-
-# Zsh / config helpers
-alias zsrc='source ~/.zshrc'
-alias zedit='nvim ~/.zshrc'
-alias znano='nano ~/.zshrc'
-alias aliases='nvim ~/.zshrc'    # quick open
-alias reload='exec zsh'          # restart shell
-
-# Safety: confirm before overwriting/removing
-alias cp='cp -i'
-alias mv='mv -i'
-alias rm='rm -i'
-alias mkdir='mkdir -p'
-
-# Archive utilities
-alias untar='f(){ tar -xvf "$1"; }; f'
-alias targz='f(){ tar -czvf "$1".tar.gz "$1"; }; f'
-alias zipdir='f(){ zip -r "$1".zip "$1"; }; f'
-alias unzipo='f(){ unzip "$1" -d "${2:-.}"; }; f'
-
-# Search / ripgrep + fd (if installed)
-alias rg='rg --hidden --glob "!.git"'
-alias rgi='rg -n --ignore-case'
-alias ff='fd --hidden --exclude .git'
-alias whichcmd='command -v'
-
-# HTTP quick server
-alias serve='f(){ python3 -m http.server "${1:-8000}"; }; f'
-
-# Time / date helpers
-alias now='date "+%Y-%m-%d %H:%M:%S"'
-alias epoch='date +%s'
-
-# GitHub CLI (if gh installed)
-alias ghpr='gh pr create -f -d'              # draft PR
-alias ghprv='gh pr view -w'                  # view in browser
-alias ghco='gh pr checkout'                  # checkout PR by number
-
-# Python / venv
-alias venv='python3 -m venv .venv && source .venv/bin/activate'
-alias act='source .venv/bin/activate'
-alias deact='deactivate'
+# Turborepo standalone installer PATH: /Users/obiabo/.local/bin
+case ":$PATH:" in
+  *:'/Users/obiabo/.local/bin':*) ;;
+  *) PATH='/Users/obiabo/.local/bin':"$PATH" ;;
+esac
+export PATH

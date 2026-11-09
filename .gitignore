@@ -1,0 +1,2 @@
+# Local Chezmoi files that may contain credentials or device-specific data.
+**/private_*

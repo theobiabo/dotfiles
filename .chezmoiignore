@@ -1,0 +1,32 @@
+# Credentials, account state, and local history
+.ssh
+.aws
+.gnupg
+.env
+.env.*
+.zsh_history
+.zsh_sessions
+.config/gh
+.config/solana
+.config/sanity
+.config/configstore
+.config/chezmoi
+.config/github-copilot
+.config/goose/chatgpt_codex
+.config/goose/xai_oauth
+.config/goose/tls
+.docker/config.json
+.codex/auth*
+.codex/*.sqlite*
+.codex/mcp-oauth-locks
+.codex/sessions
+.codex/memories*
+.railway/config.json
+
+# Generated trees and old backups retained in the repository
+**/.git
+**/node_modules
+.config/nvim.bak
+.config/raycast
+.config/flutter/tool_state
+.config/simple-update-notifier

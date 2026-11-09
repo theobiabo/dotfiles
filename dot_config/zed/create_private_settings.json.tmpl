@@ -1,0 +1,80 @@
+{
+  "context_servers": {
+    "mcp-server-playwright": {
+      "enabled": true,
+      "remote": false,
+      "settings": {
+        "browser": "chrome"
+      }
+    },
+    "posthog": {
+      "enabled": true,
+      "url": "https://mcp.posthog.com/mcp"
+    }
+  },
+  "lsp": {
+    "vtsls": {
+      "settings": {
+        "typescript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always"
+          }
+        },
+        "javascript": {
+          "updateImportsOnFileMove": {
+            "enabled": "always"
+          }
+        }
+      },
+      "enable_lsp_tasks": true
+    }
+  },
+  "autosave": {
+    "after_delay": {
+      "milliseconds": 1000
+    }
+  },
+  "buffer_font_family": ".ZedMono",
+  "icon_theme": "Zed (Default)",
+  "project_panel": {
+    "dock": "left"
+  },
+  "outline_panel": {
+    "dock": "left"
+  },
+  "collaboration_panel": {
+    "dock": "left"
+  },
+  "agent": {
+    "default_profile": "write",
+    "default_model": {
+      "effort": "low",
+      "provider": "openai-subscribed",
+      "model": "gpt-5.6-sol",
+      "enable_thinking": true
+    },
+    "dock": "right",
+    "favorite_models": [],
+    "model_parameters": []
+  },
+  "git_panel": {
+    "dock": "left"
+  },
+  "cli_default_open_behavior": "new_window",
+  "agent_servers": {
+    "github-copilot-cli": {
+      "type": "registry"
+    },
+    "codex-acp": {
+      "default_config_options": {
+        "model": "gpt-5.6-sol",
+        "reasoning_effort": "high"
+      },
+      "type": "registry"
+    }
+  },
+  "base_keymap": "VSCode",
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": "Ayu Dark"
+}
